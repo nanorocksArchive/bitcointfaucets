@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.bitcointfaucets.ml/sitemap.xml
+Host: https://www.bitcointfaucets.ml
