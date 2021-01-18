@@ -13,10 +13,11 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build && gh-pages -d public -b main"
+    "deploy": "gatsby build && gh-pages -d public"
   },
   "dependencies": {
     "gatsby": "^2.26.1",
+    "gatsby-plugin-cname": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }

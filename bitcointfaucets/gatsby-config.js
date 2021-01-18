@@ -1,5 +1,6 @@
 module.exports = {
-    plugins: [
-
-    ]
-}
+  siteMetadata: {
+    siteUrl: "https://www.bitcointfaucets.ml",
+  },
+  plugins: ["gatsby-plugin-cname"],
+};
