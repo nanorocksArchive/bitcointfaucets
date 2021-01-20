@@ -8,18 +8,11 @@ import btcLogo from "../img/btc-logo.png";
 
 const random = randomFaucetsIndex(btcFaucets);
 
+
 // markup
 const IndexPage = () => {
   return (
     <main>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DMS6ZZ37LV"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-DMS6ZZ37LV');
-    </script>
       <SEO
         title="Bitcoint faucets for everyone"
         description="WebSite for active Bitcoint Faucets"
@@ -32,6 +25,22 @@ const IndexPage = () => {
               }
             }`}
       />
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-DMS6ZZ37LV"
+      ></script>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-DMS6ZZ37LV');
+        `,
+        }}
+      />
+
       {/* Header */}
       <div className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 w-full">
         <h1 className="md:pl-16 md:pr-16 md:pt-16 pl-4 pr-4 pt-10 pb-10 font-black text-white md:text-6xl text-3xl">
@@ -57,6 +66,7 @@ const IndexPage = () => {
       {/* ADS */}
       <div className="flex pt-4 md:pl-16 md:pr-16 pl-4 pr-4 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
         <iframe
+          title="ad1"
           data-aa="1554738"
           src="//ad.a-ads.com/1554738?size=728x90"
           scrolling="no"
@@ -64,6 +74,7 @@ const IndexPage = () => {
           allowtransparency="true"
         ></iframe>
         <iframe
+          title="ad2"
           data-aa="1555418"
           src="//ad.a-ads.com/1555418?size=728x90"
           scrolling="no"
