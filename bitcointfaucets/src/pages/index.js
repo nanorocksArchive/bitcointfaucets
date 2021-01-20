@@ -48,7 +48,7 @@ const IndexPage = () => {
       </div>
       {/* ADS */}
       <div className="flex pt-4 md:pl-16 md:pr-16 pl-4 pr-4 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-        {/* <iframe
+        <iframe
           data-aa="1554738"
           src="//ad.a-ads.com/1554738?size=728x90"
           scrolling="no"
@@ -61,7 +61,7 @@ const IndexPage = () => {
           scrolling="no"
           className="flex-auto relative border-0 overflow-hidden p-0 w-full h-full block mx-auto"
           allowtransparency="true"
-        ></iframe> */}
+        ></iframe>
       </div>
       {/* FAQ  */}
       <div className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 w-full">
