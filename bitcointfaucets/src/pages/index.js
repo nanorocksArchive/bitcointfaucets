@@ -12,6 +12,14 @@ const random = randomFaucetsIndex(btcFaucets);
 const IndexPage = () => {
   return (
     <main>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DMS6ZZ37LV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-DMS6ZZ37LV');
+    </script>
       <SEO
         title="Bitcoint faucets for everyone"
         description="WebSite for active Bitcoint Faucets"
