@@ -1,150 +1,88 @@
-import * as React from "react"
+import * as React from "react";
+import { SEO } from "gatsby-plugin-seo";
+import Faucet from "../components/Faucet";
+import Description from "../components/Description";
+import { btcFaucets, randomFaucetsIndex } from "../data/btcFaucets";
+import { descriptions } from "../data/descriptions";
+import btcLogo from "../img/btc-logo.png";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: "300",
-  fontSize: "24px",
-  maxWidth: "560px",
-}
-
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: "16px",
-  verticalAlign: "5%",
-}
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: "14px",
-}
-
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
-// data
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#000000",
-  },
-]
+const random = randomFaucetsIndex(btcFaucets);
 
 // markup
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
+    <main>
+      <SEO
+        title="Bitcoint faucets for everyone"
+        description="WebSite for active Bitcoint Faucets"
+        pagePath="/"
+        schema={`{
+              "@type": "Bitcoint faucets for everyone",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "bitcointfaucets.ml"
+              }
+            }`}
       />
+      {/* Header */}
+      <div className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 w-full">
+        <h1 className="md:pl-16 md:pr-16 md:pt-16 pl-4 pr-4 pt-10 pb-10 font-black text-white md:text-6xl text-3xl">
+          <img src={btcLogo} className="md:w-24 w-16 inline-block" alt="logo" />
+          <span className="relative top-2">itcoint Faucets</span>
+          <small className="md:text-sm relative md:bottom-9 bottom-4 text-sm">
+            {new Date().getFullYear()}
+          </small>
+        </h1>
+      </div>
+      {/* Faucets */}
+      <div className="grid sm:grid-cols-12 md:grid-cols-4 gap-6 pt-4 pb-20 md:pl-16 md:pr-16 pl-4 pr-4 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+        {btcFaucets.map((faucet, index) => {
+          return (
+            <Faucet
+              key={index}
+              data={faucet}
+              scale={random.includes(faucet.id) ? `sm:col-span-2` : ""}
+            />
+          );
+        })}
+      </div>
+      {/* ADS */}
+      <div className="flex pt-4 md:pl-16 md:pr-16 pl-4 pr-4 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+        {/* <iframe
+          data-aa="1554738"
+          src="//ad.a-ads.com/1554738?size=728x90"
+          scrolling="no"
+          className="flex-auto border-0 overflow-hidden p-0 w-full h-full block mx-auto"
+          allowtransparency="true"
+        ></iframe>
+        <iframe
+          data-aa="1555418"
+          src="//ad.a-ads.com/1555418?size=728x90"
+          scrolling="no"
+          className="flex-auto relative border-0 overflow-hidden p-0 w-full h-full block mx-auto"
+          allowtransparency="true"
+        ></iframe> */}
+      </div>
+      {/* FAQ  */}
+      <div className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 w-full">
+        <h1 className="md:pl-16 md:pr-16 pl-4 pr-4 pb-10 font-black text-white md:text-6xl text-3xl">
+          <span className="relative top-2">FAQ</span>
+        </h1>
+      </div>
+      {/* Descriptions */}
+      <div className="pt-4 pb-20 md:pl-16 md:pr-16 pl-4 pr-4 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+        <figure className="md:flex bg-gray-200 rounded-xl md:p-0 p-8 shadow-md">
+          <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
+            <blockquote>
+              {descriptions.map((description, index) => {
+                return <Description key={index} data={description} />;
+              })}
+            </blockquote>
+          </div>
+        </figure>
+      </div>
     </main>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
