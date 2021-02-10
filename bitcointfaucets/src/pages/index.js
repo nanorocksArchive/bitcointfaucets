@@ -13,6 +13,8 @@ const random = randomFaucetsIndex(btcFaucets);
 const IndexPage = () => {
   return (
     <main>
+      <meta name="coinzilla" content="320341f15900b2fa55a982e19ae18beb" />
+      <meta name="monetization" content="$ilp.uphold.com/8xZPY39qGQiK" />
       <SEO
         title="Bitcoint faucets for everyone"
         description="WebSite for active Bitcoint Faucets"
